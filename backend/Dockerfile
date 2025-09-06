@@ -8,8 +8,9 @@ WORKDIR /app
 # Устанавливаем системные зависимости для psycopg2
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
+        build-essential \
         libpq-dev \
-        gcc \
+        python3-dev \
     && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt ./
